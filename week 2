@@ -1,0 +1,88 @@
+Q1: Print Digits (Right to Left)
+
+import java.util.Scanner;
+public class PrintDigits {
+    public static void main(String[] args) {
+        try (Scanner sc = new Scanner(System.in)) {
+            int n = sc.nextInt();
+            while (n > 0) {
+                int digit = n % 10;  
+                System.out.print(digit + " ");
+                n = n / 10;       
+            }
+        }
+    }
+}
+***************************************************
+Q2: Print Digits (Left to Right)
+
+import java.util.Scanner;
+public class PrintDigitsLeftToRight {
+    public static void main(String[] args) {
+        try (Scanner sc = new Scanner(System.in)) {
+            String n = sc.next(); 
+            for (int i = 0; i < n.length(); i++) {
+                System.out.print(n.charAt(i) + " ");
+            }
+        }
+    }
+}
+***************************************************
+Q3: Count Digits
+
+import java.util.Scanner;
+public class CountDigits {
+    public static void main(String[] args) {
+        try (Scanner sc = new Scanner(System.in)) {
+            long n = sc.nextLong();  
+            int count = 0;
+            while (n > 0) {
+                count++;
+                n = n / 10;  
+            }
+            System.out.println(count);
+        }
+    }
+}
+**************************************************
+Q4: Sum of Digits
+
+import java.util.Scanner;
+public class SumOfDigits {
+    public static void main(String[] args) {
+        try (Scanner sc = new Scanner(System.in)) {
+            int n = sc.nextInt();   
+            int sum = 0;
+            while (n > 0) {
+                int digit = n % 10;   
+                sum += digit;         
+                n = n / 10;           
+            }
+            System.out.println(sum);
+        }
+    }
+}
+**************************************************
+Q5: Armstrong Number
+
+import java.util.Scanner;
+public class ArmstrongNumber {
+    public static void main(String[] args) {
+        try (Scanner sc = new Scanner(System.in)) {
+            int n = sc.nextInt();   
+            int original = n;
+            int len = String.valueOf(n).length();
+            int sum = 0;
+            while (n > 0) {
+                int digit = n % 10;
+                sum += Math.pow(digit, len);  
+                n = n / 10;
+            }
+            if (sum == original) {
+                System.out.println("Armstrong Number");
+            } else {
+                System.out.println("Not an Armstrong Number");
+            }
+        }
+    }
+}
